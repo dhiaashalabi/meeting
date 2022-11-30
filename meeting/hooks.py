@@ -103,6 +103,12 @@ app_license = "MIT"
 #	}
 # }
 
+doc_events = {
+	"User": {
+		"after_insert": "meeting.api.make_orientation_meeting",
+	}
+}
+
 # Scheduled Tasks
 # ---------------
 

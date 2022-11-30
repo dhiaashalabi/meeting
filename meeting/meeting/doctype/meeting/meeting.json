@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "MEET-.##",
+ "creation": "2022-11-30 09:44:08.139701",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject",
+  "from_time",
+  "column_break_3",
+  "date",
+  "to_time",
+  "status",
+  "agenda_section",
+  "agenda",
+  "invitation_section",
+  "invitation_message",
+  "send_email",
+  "minutes_section",
+  "minutes",
+  "attendee_section",
+  "attendee"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Planned\nIn Progress\nCompleted\nCanceled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agenda_section",
+   "fieldtype": "Section Break",
+   "label": "Agenda"
+  },
+  {
+   "fieldname": "agenda",
+   "fieldtype": "Table",
+   "label": "Agenda",
+   "options": "Meeting Agenda"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "minutes_section",
+   "fieldtype": "Section Break",
+   "label": "Minutes"
+  },
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Table",
+   "label": "Minutes",
+   "options": "Meeting Minute"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "attendee_section",
+   "fieldtype": "Section Break",
+   "label": "Attendee"
+  },
+  {
+   "fieldname": "attendee",
+   "fieldtype": "Table",
+   "label": "Attendee",
+   "options": "Meeting Attendee"
+  },
+  {
+   "fieldname": "invitation_section",
+   "fieldtype": "Section Break",
+   "label": "Invitation"
+  },
+  {
+   "fieldname": "invitation_message",
+   "fieldtype": "Text Editor",
+   "label": "Invitation Message"
+  },
+  {
+   "depends_on": "eval:doc.status === \"Planned\"",
+   "fieldname": "send_email",
+   "fieldtype": "Button",
+   "label": "Send Email"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-30 13:31:14.187155",
+ "modified_by": "Administrator",
+ "module": "Meeting",
+ "name": "Meeting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Meeting Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
