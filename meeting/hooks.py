@@ -106,6 +106,10 @@ app_license = "MIT"
 doc_events = {
 	"User": {
 		"after_insert": "meeting.api.make_orientation_meeting",
+	},
+	"ToDo": {
+		"on_update": "meeting.api.update_meeting_status",
+		"on_trash": "meeting.api.update_meeting_status",
 	}
 }
 
